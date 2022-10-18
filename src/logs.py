@@ -19,4 +19,4 @@ def show_progress(args, t, train_ts, train_loss, val_ts=None, val_loss=None, val
             ax2.plot(val_ts, val_acc, c='green', marker='o', lw=3)
 
         # plt.legend()
-        plt.savefig(f'plots/g{t:.3f}_lr{args.lr}_mel{args.n_mels}_trunc{args.trunc}_epochs{args.epochs}SR_deepMFCC{args.n_mfcc}.png')
+        plt.savefig(f'plots/g{t:.3f}_lr{args.lr}_trunc{args.trunc}_epochs{args.epochs}_MFCC{args.n_mfcc}.png')

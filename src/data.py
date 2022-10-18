@@ -109,12 +109,12 @@ class LibriDataset(Dataset):
         signal = self.data[n][0].squeeze(axis=0)
 
         if not self.trunc:
-            return signal, self.labels[n]
+            return signal.numpy(), self.labels[n]
 
         # padding shorter signals
         out = torch.zeros(self.trunc)
         out[:len(signal[:self.trunc])] = signal[:self.trunc]
-        return out, self.labels[n]
+        return out.numpy(), self.labels[n]
 
     def get_label(self, n: int):
         return self.labels[n]

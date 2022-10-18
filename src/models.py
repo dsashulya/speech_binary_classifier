@@ -8,10 +8,8 @@ class CNN(nn.Module):
         self.conv1 = nn.Conv2d(1, 32, kernel_size=(3, 3), stride=1)
         self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
         self.conv2 = nn.Conv2d(32, 16, kernel_size=(3, 3), stride=1)
-        self.linear = nn.Sequential(nn.Linear(15840, 1024), # 4224
+        self.linear = nn.Sequential(nn.Linear(15840, 1024),
                                     nn.ReLU(),
-                                    # nn.Linear(32000, 1024),
-                                    # nn.ReLU(),
                                     nn.Linear(1024, 2))
 
     def forward(self, x):
